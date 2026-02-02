@@ -1,0 +1,21 @@
+class Solution {
+    public int minimumCost(int[] nums) {
+        int n=nums.length-1;
+
+        int firstcost= nums[0];
+
+        int Totalmincost = Integer.MAX_VALUE;
+
+        for(int i=1;i<=n-1;i++)
+        {
+            for(int j=i+1;j<=n;j++)
+            {
+                int currentcost = firstcost + nums[i] + nums[j];
+
+                Totalmincost = Math.min(Totalmincost, currentcost);
+            }
+        }
+
+        return Totalmincost;
+    }
+}
